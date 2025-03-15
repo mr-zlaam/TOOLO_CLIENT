@@ -1,2 +1,2 @@
-bun lint-staged
+bun run type-check && bun lint-staged && git add .
 

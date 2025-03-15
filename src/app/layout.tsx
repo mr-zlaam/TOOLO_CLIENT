@@ -19,8 +19,8 @@ const fontStyle = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | PLogic",
-    default: "PLogic - Cloud and DevOps Solutions"
+    template: "Toolo | %s  ",
+    default: "toolo.online is a plate form which has everyday online tools to make your life easier"
   },
   description: "Professional cloud and DevOps services for businesses of all sizes.",
   keywords: ["DevOps", "Cloud", "CI/CD", "Infrastructure", "Cloud Migration"]

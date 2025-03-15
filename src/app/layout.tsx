@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "../styles/custom.css";
 import "./globals.css";
 import React from "react";
+import { SITE_NAME } from "@/contants/varaibles.constant";
 
 const fontVariable = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -19,11 +20,11 @@ const fontStyle = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: "Toolo | %s  ",
-    default: "toolo.online is a plate form which has everyday online tools to make your life easier"
+    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME}`
   },
-  description: "Professional cloud and DevOps services for businesses of all sizes.",
-  keywords: ["DevOps", "Cloud", "CI/CD", "Infrastructure", "Cloud Migration"]
+  description: "Toolo.online is a plate form which has everyday online tools to make your life easier",
+  keywords: ["Tools", "convert", "documents", "pdf", "docx", "Toolo"]
 };
 
 export default function RootLayout({

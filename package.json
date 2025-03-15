@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "type-check":"tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "commit": "commit",
     "commit-lint": "commitlint  --edit",
     "prepare": "husky"

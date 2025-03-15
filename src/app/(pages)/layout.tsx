@@ -1,3 +1,4 @@
+import Header from "@/globalComponents/header";
 import React from "react";
 
 export default function PageLayout({
@@ -5,5 +6,10 @@ export default function PageLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <React.Fragment>
+      <Header />
+      {children}
+    </React.Fragment>
+  );
 }

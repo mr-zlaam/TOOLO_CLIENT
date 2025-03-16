@@ -1,3 +1,4 @@
+// import Header from "@/globalComponents/header";
 import Header from "@/globalComponents/header";
 import React from "react";
 

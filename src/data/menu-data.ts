@@ -67,7 +67,7 @@ export const mainNavItems: MenuItem[] = [
     ]
   },
   {
-    title: "Chekcout Tools",
+    title: "Checkout Tools",
     href: "/tools",
     children: [
       {

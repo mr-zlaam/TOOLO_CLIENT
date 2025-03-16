@@ -1,3 +1,4 @@
+import CtaCard from "@/appComponents/ctaCard/ctaCard";
 import { Contact } from "./comp/contact-us";
 import { Features } from "./comp/features";
 import { Hero } from "./comp/hero";
@@ -12,6 +13,7 @@ export const HomeComponents = () => {
       <ToolsShowcase />
       <Features />
       <Testimonials />
+      <CtaCard />
       <Pricing />
       <Contact />
     </main>

@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 // Mock import for Icons - in real app you'd import from your icon library
 const getIcon = (iconName: string) => {
   return (
-    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-blue-100 text-blue-600">
-      <div className="w-5 h-5 bg-current rounded-sm">{iconName}</div>
+    <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center bg-blue-100 text-blue-600", iconName)}>
+      <div className="w-5 h-5 bg-current rounded-sm"></div>
     </div>
   );
 };

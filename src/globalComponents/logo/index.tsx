@@ -9,7 +9,7 @@ export interface LogoProps extends React.HTMLAttributes<HTMLImageElement> {
 export default function Logo({ width, height, className }: LogoProps) {
   return (
     <Image
-      src="https://placehold.co/100x100"
+      src="/logo/toolologo.png"
       alt="Logo"
       width={width ?? 100}
       height={height ?? 100}

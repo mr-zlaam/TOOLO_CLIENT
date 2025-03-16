@@ -1,4 +1,5 @@
 // import Header from "@/globalComponents/header";
+import Footer from "@/globalComponents/footer";
 import Header from "@/globalComponents/header";
 import React from "react";
 
@@ -11,6 +12,7 @@ export default function PageLayout({
     <React.Fragment>
       <Header />
       {children}
+      <Footer />
     </React.Fragment>
   );
 }

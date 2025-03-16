@@ -52,7 +52,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: hsl(219, 100%, 26.5%);
+  --primary: #3472E7;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: hsl(16, 100%, 60.4%);
   --secondary-foreground: oklch(0.205 0 0);

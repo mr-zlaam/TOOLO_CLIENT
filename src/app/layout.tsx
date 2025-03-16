@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "../styles/custom.css";
 import "./globals.css";
 import React from "react";
-import { SITE_NAME } from "@/contants/varaibles.constant";
+import { SITE_NAME } from "@/contants/variables.constant";
 
 const fontVariable = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

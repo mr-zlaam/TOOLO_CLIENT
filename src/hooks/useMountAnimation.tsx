@@ -1,32 +1,57 @@
-// hooks/useScrollAnimation.ts
-import { useEffect, useRef, useState } from "react";
+// src/hooks/useMountAnimation.tsx
 
-interface ScrollAnimationOptions {
-  threshold?: number;
-  rootMargin?: string;
-  triggerOnce?: boolean;
-}
+type MountAnimationOptions = {
+  delay?: number;
+  duration?: number;
+};
 
-export function useScrollAnimation({ threshold = 0.1, rootMargin = "0px", triggerOnce = true }: ScrollAnimationOptions = {}) {
-  const ref = useRef<HTMLElement | null>(null);
+export const useMountAnimation = (options: MountAnimationOptions = {}) => {
+  const { delay = 0, duration = 500 } = options;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const timeout = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
 
-    const element = ref.current;
+    return () => clearTimeout(timeout);
+  }, [delay]);
+
+  return {
+    isVisible,
+    animationStyles: {
+      transition: `opacity ${duration}ms ease-in-out, transform ${duration}ms ease-in-out`,
+      opacity: isVisible ? 1 : 0,
+      transform: isVisible ? "translateY(0)" : "translateY(20px)"
+    }
+  };
+};
+
+// src/hooks/useScrollAnimation.tsx
+import { useEffect, useState, useRef } from "react";
+
+type ScrollAnimationOptions = {
+  threshold?: number;
+  rootMargin?: string;
+};
+
+export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
+  const { threshold = 0.1, rootMargin = "0px" } = options;
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const currentRef = ref.current;
+    if (!currentRef) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (triggerOnce) {
-            observer.unobserve(element);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.unobserve(entry.target);
           }
-        } else if (!triggerOnce) {
-          setIsVisible(false);
-        }
+        });
       },
       {
         threshold,
@@ -34,15 +59,12 @@ export function useScrollAnimation({ threshold = 0.1, rootMargin = "0px", trigge
       }
     );
 
-    observer.observe(element);
+    observer.observe(currentRef);
 
     return () => {
-      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-      if (element) {
-        observer.unobserve(element);
-      }
+      observer.unobserve(currentRef);
     };
-  }, [threshold, rootMargin, triggerOnce]);
+  }, [threshold, rootMargin]);
 
-  return { ref, isVisible };
-}
+  return { ref, isInView };
+};

@@ -1,7 +1,9 @@
+import { HomeComponents } from "@/pageComponents/home";
+
 export default function HomePage() {
   return (
     <>
-      <h1>Hello world</h1>
+      <HomeComponents />
     </>
   );
 }

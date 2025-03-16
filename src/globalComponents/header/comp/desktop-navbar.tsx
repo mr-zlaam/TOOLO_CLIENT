@@ -19,7 +19,7 @@ import { mainNavItems } from "@/data/menu-data";
 
 export default function DesktopNavbar() {
   return (
-    <div className="hidden md:flex items-center justify-between w-full">
+    <div className="hidden lg:flex items-center justify-between w-full">
       <NavigationMenu>
         <NavigationMenuList>
           {mainNavItems.map((item) => {

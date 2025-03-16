@@ -2,21 +2,23 @@
 // src/globalComponents/header/comp/mobile-navbar.tsx
 import * as React from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 // Import the menu data
 import { mainNavItems } from "@/data/menu-data";
 
 export default function MobileNavbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    // When closing the menu, reset expanded sections
+    if (!isOpen) {
+      setIsOpen(true);
+    }
     if (isOpen) {
       setExpandedSection(null);
     }
@@ -27,7 +29,7 @@ export default function MobileNavbar() {
   };
 
   // Close menu when clicking outside
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
       if (isOpen && !target.closest(".mobile-menu-container")) {
@@ -43,7 +45,7 @@ export default function MobileNavbar() {
   }, [isOpen]);
 
   // Lock body scroll when menu is open
-  React.useEffect(() => {
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -55,17 +57,18 @@ export default function MobileNavbar() {
   }, [isOpen]);
 
   return (
-    <div className="md:hidden">
-      <Button
-        variant="ghost"
-        size="icon"
-        aria-label={isOpen ? "Close menu" : "Open menu"}
-        className="relative z-50"
-        onClick={toggleMenu}>
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-      </Button>
+    <div className="lg:hidden">
+      {!isOpen && (
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          className="relative z-50"
+          onClick={toggleMenu}>
+          {!isOpen && <Menu className="h-12 w-12" />}
+        </Button>
+      )}
 
-      {/* Mobile menu overlay */}
       <div
         className={cn(
           "fixed inset-0 z-40 bg-background/80 backdrop-blur-sm transition-all duration-300",
@@ -73,7 +76,6 @@ export default function MobileNavbar() {
         )}
       />
 
-      {/* Mobile menu panel */}
       <div
         className={cn(
           "fixed inset-y-0 right-0 z-40 w-full max-w-xs bg-background p-6 shadow-lg transition-transform duration-300 mobile-menu-container",
@@ -82,7 +84,6 @@ export default function MobileNavbar() {
         <div className="flex flex-col space-y-6">
           <div className="space-y-4">
             {mainNavItems.map((item) => {
-              // Check if item has children and the children array is not empty
               const hasChildren = Array.isArray(item.children) && item.children.length > 0;
 
               return (

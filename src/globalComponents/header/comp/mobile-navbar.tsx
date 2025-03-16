@@ -2,10 +2,9 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
 
 // Import the menu data
 import { mainNavItems } from "@/data/menu-data";
@@ -15,12 +14,15 @@ export default function MobileNavbar() {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   const toggleMenu = () => {
-    if (!isOpen) {
-      setIsOpen(true);
-    }
+    setIsOpen((prev) => !prev);
     if (isOpen) {
       setExpandedSection(null);
     }
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setExpandedSection(null);
   };
 
   const toggleSection = (title: string) => {
@@ -32,8 +34,7 @@ export default function MobileNavbar() {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
       if (isOpen && !target.closest(".mobile-menu-container")) {
-        setIsOpen(false);
-        setExpandedSection(null);
+        closeMenu();
       }
     };
 
@@ -118,7 +119,7 @@ export default function MobileNavbar() {
                             key={child.title}
                             href={child.href}
                             className="block pl-4 py-2 text-sm text-muted-foreground hover:text-foreground"
-                            onClick={toggleMenu}>
+                            onClick={closeMenu}>
                             {child.title}
                           </Link>
                         ))}
@@ -128,7 +129,7 @@ export default function MobileNavbar() {
                     <Link
                       href={item.href}
                       className="block py-2 font-medium"
-                      onClick={toggleMenu}>
+                      onClick={closeMenu}>
                       {item.title}
                     </Link>
                   )}
@@ -143,12 +144,20 @@ export default function MobileNavbar() {
               variant="outline"
               className="w-full"
               asChild>
-              <Link href="/auth/signin">Sign In</Link>
+              <Link
+                href="/auth/signin"
+                onClick={closeMenu}>
+                Sign In
+              </Link>
             </Button>
             <Button
               className="w-full"
               asChild>
-              <Link href="/auth/signup">Sign Up</Link>
+              <Link
+                href="/auth/signup"
+                onClick={closeMenu}>
+                Sign Up
+              </Link>
             </Button>
           </div>
         </div>

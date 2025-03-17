@@ -35,11 +35,6 @@ export const mainNavItems: MenuItem[] = [
         description: "Future feature to extract text from images and scanned documents."
       },
       {
-        title: "Intuitive & User-Friendly UI 🎨",
-        href: "/features/ui",
-        description: "Clean, minimal design to keep things simple."
-      },
-      {
         title: "Multi-Format Support 🔄",
         href: "/features/formats",
         description: "Convert between various document and image formats effortlessly."
@@ -48,21 +43,6 @@ export const mainNavItems: MenuItem[] = [
         title: "Subscription Perks 💎",
         href: "/features/premium",
         description: "Higher limits, priority processing, batch conversion, and more for premium users."
-      },
-      {
-        title: "One-Click Downloads ⏬",
-        href: "/features/downloads",
-        description: "No unnecessary steps—just upload, convert, and download instantly."
-      },
-      {
-        title: "Cross-Platform Accessibility 🌍",
-        href: "/features/cross-platform",
-        description: "Works on any device, no installation required."
-      },
-      {
-        title: "Analytics & Usage Insights 📊",
-        href: "/features/analytics",
-        description: "Dashboard for premium users to see their conversion history and usage."
       }
     ]
   },

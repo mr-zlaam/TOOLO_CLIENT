@@ -38,7 +38,7 @@ export const Section = ({
         {(title !== undefined || subtitle !== undefined) && (
           <div className="mb-12 text-center">
             {title !== undefined && <h2 className={cn("text-3xl font-bold tracking-tight md:text-4xl", titleClassName)}>{title}</h2>}
-            {subtitle !== undefined && <p className={cn("mt-4 text-lg text-gray-600 max-w-3xl mx-auto", subtitleClassName)}>{subtitle}</p>}
+            {subtitle !== undefined && <p className={cn("mt-4 text-lg text-gray-600  ", subtitleClassName)}>{subtitle}</p>}
           </div>
         )}
         {children}

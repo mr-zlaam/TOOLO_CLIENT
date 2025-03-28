@@ -3,7 +3,7 @@ import { Manrope } from "next/font/google"; // Changed from Poppins to Manrope
 import "../styles/custom.css";
 import "./globals.css";
 import React from "react";
-import { SITE_NAME } from "@/contants/variables.constant";
+import { SITE_NAME } from "@/contants/global.constant";
 
 const fontVariable = Manrope({
   weight: ["200", "300", "400", "500", "600", "700", "800"], // Manrope doesn't have 100/900

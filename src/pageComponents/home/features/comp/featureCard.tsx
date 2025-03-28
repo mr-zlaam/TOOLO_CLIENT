@@ -1,8 +1,8 @@
 "use client";
-import type { FEATURES } from "@/contants/variables.constant";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { Icon } from "@/appComponents/mockIcon/mockIcon";
+import type { FEATURES } from "./features.data";
 export const FeatureCard = ({ feature, index }: { feature: (typeof FEATURES)[0]; index: number }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,

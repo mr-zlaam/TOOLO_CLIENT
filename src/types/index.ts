@@ -4,63 +4,7 @@ export interface FeatureType {
   id: string;
   title: string;
 }
-// src/types/index.ts
 
-// Tool types
-export interface Tool {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  path: string;
-  isPremium: boolean;
-}
-
-export interface ToolCategory {
-  id: string;
-  name: string;
-  tools: Tool[];
-}
-
-// Feature types
-export interface Feature {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-}
-
-// Testimonial types
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  avatar?: string;
-  rating: 1 | 2 | 3 | 4 | 5;
-}
-
-// Pricing plan types
-export interface PricingFeature {
-  title: string;
-  included: boolean;
-}
-
-export interface PricingPlan {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  billingPeriod: "monthly" | "yearly";
-  currency: string;
-  features: PricingFeature[];
-  isPopular?: boolean;
-  buttonText: string;
-  buttonVariant?: "default" | "outline" | "premium";
-}
-
-// Animation types
 export interface AnimationProps {
   delay?: number;
   duration?: number;

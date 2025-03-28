@@ -1,10 +1,10 @@
 "use client";
 
-import { TESTIMONIALS } from "@/contants/variables.constant";
 import { Section } from "@/appComponents/container";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { TESTIMONIALS } from "./comp/testimonial.data";
 
 export const Testimonials = () => {
   const [ref, inView] = useInView({

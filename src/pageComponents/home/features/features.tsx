@@ -1,7 +1,7 @@
 "use client";
-import { FEATURES } from "@/contants/variables.constant";
 import { Section } from "@/appComponents/container";
 import { FeatureCard } from "./comp/featureCard";
+import { FEATURES } from "./comp/features.data";
 
 export const Features = () => {
   return (

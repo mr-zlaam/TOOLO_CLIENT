@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { useMountAnimation } from "@/hooks/useMountAnimation";
 import { scrollToElement } from "@/lib/utils";
-import { APP_NAME, HERO_CTA_PRIMARY, HERO_CTA_SECONDARY, HERO_SUBTITLE, HERO_TITLE } from "@/contants/variables.constant";
+import { HERO_CTA_PRIMARY, HERO_CTA_SECONDARY, HERO_SUBTITLE, HERO_TITLE } from "./constants/hero.constants";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { APP_NAME } from "@/contants/global.constant";
 
 export const Hero = () => {
   const titleAnimation = useMountAnimation({ delay: 100 });
@@ -19,7 +20,7 @@ export const Hero = () => {
             {/* Content */}
             <div className="flex flex-col w-full lg:w-1/2 space-y-8">
               <div style={titleAnimation.animationStyles}>
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                <h1 className="text-4xl font-bold   tracking-tight sm:text-5xl md:text-6xl">
                   <span className="text-blue-600">{APP_NAME}:</span> {HERO_TITLE}
                 </h1>
               </div>

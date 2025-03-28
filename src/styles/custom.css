@@ -1,6 +1,8 @@
 /* Add these styles to your globals.css */
 @import "tailwindcss";
-
+*::selection{
+  background:lightblue;
+}
 .perspective-\[1000px\] {
   perspective: 1000px;
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { CONTACT } from "@/contants/variables.constant";
+import { CONTACT } from "./comp/contact-us.data";
 import { Section } from "@/appComponents/container";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";

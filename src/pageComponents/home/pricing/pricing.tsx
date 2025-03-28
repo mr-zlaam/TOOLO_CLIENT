@@ -89,7 +89,7 @@ export const Pricing = () => {
       id="pricing"
       title="Simple, Transparent Pricing"
       subtitle="Choose the plan that's right for you"
-      className="bg-gradient-to-b from-blue-50 to-white">
+      className="bg-gradient-to-b from-blue-50 to-white rounded-md">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 48 }}

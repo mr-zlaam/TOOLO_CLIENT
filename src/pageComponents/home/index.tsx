@@ -1,10 +1,10 @@
 import CtaCard from "@/appComponents/ctaCard/ctaCard";
-import { Contact } from "./comp/contact-us";
-import { Features } from "./comp/features";
-import { Hero } from "./comp/hero";
-import { Pricing } from "./comp/pricing";
-import { Testimonials } from "./comp/testimonials";
-import { ToolsShowcase } from "./comp/tool-showcase";
+import { Features } from "./features/features";
+import { Hero } from "./hero/hero";
+import { Testimonials } from "./testimonials/testimonials";
+import { ToolsShowcase } from "./tool-showcase/tool-showcase";
+import Pricing from "./pricing/pricing";
+import Contact from "./contact-us/contact-us";
 
 export const HomeComponents = () => {
   return (

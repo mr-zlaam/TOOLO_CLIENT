@@ -55,7 +55,7 @@ export const Contact = () => {
       id="contact"
       title={CONTACT.title}
       subtitle={CONTACT.subtitle}
-      className="bg-gradient-to-b from-white to-blue-50 border-t border-gray-100">
+      className="bg-gradient-to-t rounded-md from-white to-blue-50 ">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 48 }}
